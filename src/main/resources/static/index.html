@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>웹 소켓</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script charset="utf-8" src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">자바스크립트 오류</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">웹소켓 연결:</label>
+                    <button id="connect" class="btn btn-default" type="submit">연결</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">연결 해제
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">이름 : </label>
+                    <input type="text" id="name" class="form-control" placeholder="이름을 입력해주세요.">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    
+    <div class="row">
+    	<div class="col-md-2">
+     		<a href="#">캡스톤</a>
+    	</div>
+    	<div class="col-md-2">
+    		<a href="#">자율드론</a>
+    	</div>
+    	<div class="col-md-2">
+    		<a href="#">소프트웨어</a>
+    	</div>
+    	<div class="col-md-2">
+    		<a href="#">웹보안</a>
+   		</div>
+    	<div class="col-md-2">
+    		<a href="#">빅데이터</a>
+    	</div>
+    </div>
+    <br>
+    <br>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th colspan="2">채팅방 : <span id="currentRoom"> </span></th>
+                </tr>
+				<tr>
+					<th>
+						<input type="text" id="content" class="form-control">
+					</th>
+					<th>
+						<button id="send" type="button" class="form-control" >보내기</button>
+					</th>
+				</tr>
+                </thead>
+                <tbody id="chats">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
